@@ -11532,6 +11532,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6c0fb4eabff42c0478a7044d580e0a09, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  Virtualscene: {fileID: 919132148597503268}
+  CenterC: {fileID: 1443144674}
+  Ref: {fileID: 2102582283}
 --- !u!1 &371211710
 GameObject:
   m_ObjectHideFlags: 0
@@ -41283,6 +41286,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 598fa7b320384324d8f0c045ab3420c1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  Virtualscene: {fileID: 919132148597503268}
+  CenterA: {fileID: 1098480997}
+  Ref: {fileID: 302914783}
 --- !u!136 &1526113252
 CapsuleCollider:
   m_ObjectHideFlags: 0
