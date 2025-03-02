@@ -14,43 +14,43 @@ public class SceneManager : MonoBehaviour
 
     void Start()
     {
-        // 預設關閉虛擬場景 & 觸發器
+        // close virtual scene & trigger
         VirtualScene.SetActive(false);
         Triggers.SetActive(false);
     }
 
-    // 切換 Passthrough 模式（真實 <-> 虛擬場景）
+    // Toggle Passthrough mode (real <-> virtual scene)
     public void TogglePassthrough(bool enable)
     {
         OVRManager.instance.isInsightPassthroughEnabled = enable;
         if (enable)
         {
-            // 切換到真實場景
+            // Switch to the real scene
             Triggers.SetActive(false);
-            VirtualScene.SetActive(false); // `AdjustButton` 也會隨 `VirtualScene` 一起隱藏
+            VirtualScene.SetActive(false);
             RealScene.SetActive(true);
             PositionTracker.SetActive(true);
             EnterButton.SetActive(true);
         }
         else
         {
-            // 切換到虛擬場景
+            // Switch to virtual scene
             Triggers.SetActive(true);
-            VirtualScene.SetActive(true); // `AdjustButton` 也會隨 `VirtualScene` 一起顯示
+            VirtualScene.SetActive(true); 
             RealScene.SetActive(false);
             PositionTracker.SetActive(false);
             EnterButton.SetActive(false);
         }
     }
 
-    // 切換展覽場景（index 0, 1, 2, 3），並重置 `VirtualScene` 位置
+    // Switch exhibition scenes (index 0, 1, 2, 3) and reset the `VirtualScene` position
     public void ResetExhibition(int index)
     {
-        // 重置 `VirtualScene` 位置
+        // Reset the `VirtualScene` position
         VirtualScene.transform.localPosition = Vector3.zero;
         VirtualScene.transform.localEulerAngles = Vector3.zero;
 
-        // 切換展覽場景
+        // Switch exhibition scene
         for (int i = 0; i < Exhibitions.Length; i++)
         {
             Exhibitions[i].SetActive(i == index);
